@@ -35,10 +35,20 @@
   font-family: 'Maharlika', serif;
 }
 
-.heading-2 {
+.heading-2, .section-heading {
   @include fontSize(30, 72);
   line-height: 1.05;
   font-family: 'Maharlika', serif;
+}
+
+.section-heading {
+  margin-bottom: 48px;
+  text-transform: uppercase;
+}
+
+.section-subheading {
+  margin-bottom: 24px;
+  text-transform: uppercase;
 }
 
 .heading-3 {

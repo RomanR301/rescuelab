@@ -1,6 +1,28 @@
 @import "../abstracts/mixins";
 @import "../abstracts/variables";
 
+section {
+  height: calc(100vh - 79px);
+}
+.community, .products, .profit {
+  height: auto;
+}
+
+.white-text {
+  & * {
+    color: $whiteColor;
+  }
+}
+
+.image {
+  & img {
+    @include defaultIcon(contain);
+  }
+  &-author {
+    margin-top: 24px;
+  }
+}
+
 .main-screen {
   background: #ECEBEF;
   height: calc(100vh - 79px);
@@ -29,4 +51,185 @@
   &__subtitle {
     color: $orangeColor;
   }
+}
+
+.mission {
+  background: #C06734;
+}
+
+.about {
+  background: #877E42;
+}
+
+.focus {
+  background: #C06734;
+}
+
+.tools {
+  padding-top: 6%;
+  background: #C7C29F;
+  & .section-heading {
+    color: #C06734;
+    padding-bottom: 7%;
+  }
+  &-item {
+
+  }
+  &__image {
+    display: flex;
+    margin-bottom: 48px;
+    width: fit-content;
+  }
+  &__title {
+    color: $orangeColor;
+    margin-bottom: 24px;
+    display: flex;
+    text-transform: uppercase;
+  }
+}
+
+.community {
+  background: #877E42;
+  padding: 6% 0;
+  & .heading-4 {
+    text-transform: uppercase;
+    margin-bottom: 56px;
+  }
+  &-copyright {
+    margin-top: 48px;
+  }
+}
+
+.products {
+  background: #ECEBEF;
+  padding: 6% 0;
+  &-heading {
+    padding-bottom: 7%;
+  }
+  &-title {
+    color: #C06734;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  &-subtitle {
+    font-weight: 700;
+  }
+  &-item {
+    
+  }
+  &__image {
+    display: flex;
+    margin-bottom: 80px;
+    height: 350px;
+    & img {
+      @include defaultIcon(contain);
+    }
+  }
+  &__title {
+    color: $orangeColor;
+    margin-bottom: 24px;
+    display: flex;
+    text-transform: uppercase;
+  }
+  & .btn-primary {
+    text-transform: uppercase;
+  }
+}
+
+.testimonials {
+  padding: 6% 0;
+  background: #C06734;
+  & .section-heading {
+    margin-bottom: 11%;
+  }
+  &-item {
+    position: relative;
+  }
+  &-like {
+    position: absolute;
+    top: 0;
+    right: 0;
+    & svg {
+      @include transition(.3);
+      cursor: pointer;
+    }
+    &:hover {
+      & svg {
+        fill: $whiteColor;
+      }
+    }
+  }
+  &__main {
+    display: flex;
+    align-items: center;
+  }
+  &__image {
+    background-image: url('../../img/half-circle.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 140px;
+    height: 140px;
+    min-height: 140px;
+    min-width: 140px;
+    background-position: bottom;
+    margin-right: 24px;
+    & img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      width: 116px;
+      height: 140px;
+      margin: auto;
+    }
+  }
+  &__author {
+    text-transform: uppercase;
+  }
+  &__text {
+    margin-top: 24px;
+  }
+}
+
+.profit {
+  & .col-lg-2 {
+    padding: 0 15px;
+    margin-bottom: 30px;
+  }
+  & .space-evenly {
+    justify-content: space-evenly;
+  }
+  background: #C7C29F;
+  padding: 6% 0;
+  & .section-heading {
+    color: $orangeColor;
+    padding-bottom: 6%;
+  }
+  &__price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+  & .price {
+    color: $orangeColor;
+  }
+  & .heart {
+    cursor: pointer;
+    & path {
+      @include transition(.3);
+    }
+    &:hover {
+      & path {
+        fill: $orangeColor;
+      }
+    }
+  }
+  &__image {
+    margin-bottom: 40px;
+  }
+}
+
+.contact {
+  background: #877E42;
 }
