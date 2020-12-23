@@ -1,0 +1,27 @@
+.tabs { 
+  &-wrap {
+    .tab-content {
+      box-shadow: 3px 2px 25px rgba(0, 0, 0, 0.3);
+      display: none;
+      animation: fadeEffect .5s;
+      -webkit-animation: fadeEffect .5s;
+      &.is-show {
+        display: block;
+      }
+      &.active {
+        display: block;
+      }
+    }
+  }
+}
+
+
+
+@keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

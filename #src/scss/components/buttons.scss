@@ -1,0 +1,20 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.btn {
+  &-primary {
+    background: $purpleColor;
+    border: 2px solid $purpleColor;
+    padding: 12px 32px;
+    line-height: 1;
+    border-radius: 10px;
+    color: $whiteColor;
+    font-size: 18px;
+    @include transition(.3);
+    cursor: pointer;
+    &:hover {
+      background: transparent;
+      color: $purpleColor;
+    }
+  }
+}
