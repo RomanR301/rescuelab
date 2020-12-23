@@ -3,8 +3,8 @@
 
 .btn {
   &-primary {
-    background: $purpleColor;
-    border: 2px solid $purpleColor;
+    background: $orangeColor;
+    border: 2px solid $orangeColor;
     padding: 12px 32px;
     line-height: 1;
     border-radius: 10px;
@@ -14,7 +14,7 @@
     cursor: pointer;
     &:hover {
       background: transparent;
-      color: $purpleColor;
+      color: $orangeColor;
     }
   }
 }

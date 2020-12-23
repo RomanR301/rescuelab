@@ -159,7 +159,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: $purpleColor;
+  color: $orangeColor;
   outline: none;
   @include transition(.3);
 }
@@ -185,7 +185,7 @@
   right: auto;
   width: 70px;
   height: 70px;
-  border: 2px solid $purpleColor;
+  border: 2px solid $orangeColor;
   border-radius: 100%;
   animation: 4s scale infinite;
   @media (max-width: $breakpoint-lg) {
@@ -202,7 +202,7 @@
   left: auto;
   width: 70px;
   height: 70px;
-  border: 2px solid $purpleColor;
+  border: 2px solid $orangeColor;
   border-radius: 100%;
   animation: 4s scale infinite;
   @media (max-width: $breakpoint-lg) {
@@ -300,7 +300,7 @@ button.swiper-pagination-bullet {
 }
 .swiper-pagination-bullet-active {
   opacity: 1;
-  background: $purpleColor;
+  background: $orangeColor;
   // background: var(--swiper-pagination-color, var(--swiper-theme-color));
 }
 .swiper-container-vertical > .swiper-pagination-bullets {

@@ -4,33 +4,6 @@ let front = {
   $body: $('body'),
   init: function () {
       this.events();
-      var advantages = new Swiper('.advantages-carousel', {
-        slidesPerView: 3,
-        spaceBetween: 30,
-        loop: true,
-        navigation: {
-            nextEl: '.advantages-next',
-            prevEl: '.advantages-prev',
-          },
-          pagination: {
-            el: '.advantages-pagination',
-          },
-          breakpoints: {
-            320: {
-              slidesPerView: 1,
-              spaceBetween: 40,
-              autoHeight: true,
-            },
-            767: {
-              slidesPerView: 2,
-              spaceBetween: 30,
-              autoHeight: false,
-            },
-            1200: {
-              slidesPerView: 3,
-            },
-        }
-      });
       var testimonials = new Swiper('.testimonials-carousel', {
         slidesPerView: 1,
         spaceBetween: 30,
@@ -43,21 +16,6 @@ let front = {
             el: '.testimonial-pagination',
           },
       });
-      $(document).ready(function() {
-        $(".accordion__item .accordion__button").on("click", function(e) {
-        e.preventDefault();
-            if ($(this).parent().hasClass("active")) {
-            $(this).parent().removeClass("active");
-            $(this).parent().find(".accordion__content").slideUp(300);
-            } else {
-            $(".accordion__item").removeClass("active");
-            $(this).parent().addClass("active");
-            $(".accordion__content").slideUp(200);
-            $(this).parent().find(".accordion__content").slideDown(300);
-            }
-        });
-      });
-      
   },
   toggleNav: function () {
     if (!this.hamburger.hasClass('open')) {
@@ -70,24 +28,6 @@ let front = {
             this.$body.removeClass('active')
         }
     },
-    openTab: function (element, tabName, parent) {
-      let i, tab_content, tab_links;
-
-      tab_content = $(element).closest(parent).find('.tab-content');
-
-      for (i = 0; i < tab_content.length; i++) {
-          tab_content[i].style.display = "none";
-      }
-
-      tab_links = $(element).closest('.tabs-ul').find('.tab-links');
-
-      for (i = 0; i < tab_links.length; i++) {
-          tab_links[i].className = tab_links[i].className.replace(" active", "");
-      }
-
-      document.getElementById(tabName).style.display = "block";
-      $(element).addClass('active');
-  },
 
   events: function () {
       let self = this;
@@ -128,25 +68,20 @@ jQuery(function () {
 });
 
 
-let langToggle = document.querySelector('.lang-select-wrapper') !== null;
-if (langToggle) {
-    (document).querySelector('.lang-select-wrapper').addEventListener('click', function() {
-        this.querySelector('.lang-select').classList.toggle('open');
-        for (const option of document.querySelectorAll(".lang-option")) {
-            option.addEventListener('click', function() {
-
-                if (!this.classList.contains('selected')) {
-                    this.parentNode.querySelector('.lang-option.selected').classList.remove('selected');
-                    this.classList.add('selected');
-                    this.closest('.lang-select').querySelector('.lang-select__trigger span').textContent = this.textContent;
-                }
-            })
-        }
-        window.addEventListener('click', function(e) {
-            const select1 = document.querySelector('.lang-select')
-            if (!select1.contains(e.target)) {
-                select1.classList.remove('open');
-            }
-        });
-    })
+$(document).on('click', '.arrow-down', function(e) {
+  e.preventDefault();
+  if ($(this).parent().hasClass("show")) {
+    $(this).parent().removeClass("show");
+} else {
+  $('.menu-item-has-child').removeClass('show');
+    $(this).parent().addClass('show');
 }
+});
+
+
+$('html').click(function(e) {
+var a = e.target;
+if ($(a).parents('.menu-item-has-child').length === 0) {
+  $('.menu-item-has-child').removeClass('show'); //hide menu item
+}
+});
