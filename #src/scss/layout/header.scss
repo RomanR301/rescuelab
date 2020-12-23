@@ -9,22 +9,35 @@
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 101;
   &-logo {
     display: flex;
     width: 194px;
     margin-right: 93px;
+    @media (max-width: $breakpoint-md) {
+      width: 160px;
+      margin-right: 20px;
+    }
     & img {
       @include defaultIcon(contain);
     }
   }
   &-socials {
     margin-left: auto;
+    display: flex;
+    align-items: center;
+    @media (max-width: $breakpoint-xl) {
+      margin-right: 20px;
+    }
     & path {
       @include transition(.3);
     }
     & a {
       margin-left: 28px;
-
+      display: flex;
+      &:first-child {
+        margin-left: 0;
+      }
       &:hover {
         & path {
           stroke: $orangeColor;
@@ -45,12 +58,13 @@
   align-items: center;
   justify-content: center;
   transition: all .5s cubic-bezier(0.55, 0.01, 0, 0.99);
-  @media (max-width: $breakpoint-lg) {
+  @media (max-width: $breakpoint-xl) {
     // display: none;
-    background: #022037;
+    background: $orangeColor;
     position: fixed;
     top: 80px;
     left: 0;
+    width: 100%;
     z-index: 99;
     padding: 0 0 10px 0;
     opacity: 0;
@@ -63,7 +77,7 @@
   }
 }
 .menu {
-  @media (max-width: $breakpoint-lg) {
+  @media (max-width: $breakpoint-xl) {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -75,16 +89,19 @@
     margin-right: 26px;
     position: relative;
     margin-right: 118px;
+    @media (max-width: 1600px) {
+      margin-right: 60px;
+    }
+    @media (max-width: 1400px) {
+      margin-right: 35px;
+    }
     &:last-child {
       margin-right: 0;
     }
     & img {
       margin-right: 14px;
     }
-    @media (max-width: 1400px) {
-      margin: 0 8px;
-    }
-    @media (max-width: $breakpoint-lg) {
+    @media (max-width: $breakpoint-xl) {
       margin: 0;
       width: 100%;
       display: block;
@@ -97,15 +114,20 @@
       align-items: center;
       position: relative;
       overflow: hidden;
-      color: $defaultText;
       @include transition(.3);
+      @media (max-width: $breakpoint-xl) {
+        color: $whiteColor;
+      }
       &:hover {
-        color: #D46B1E
+        color: #D46B1E;
+        @media (max-width: $breakpoint-xl) {
+          color: $whiteColor;
+        }
       }
       @media (max-width: 1400px) {
         font-size: 16px;
       }
-      @media (max-width: $breakpoint-lg) {
+      @media (max-width: $breakpoint-xl) {
         font-size: 14px;
         padding: 10px 17px;
         & img {
@@ -129,15 +151,17 @@
       overflow: hidden;
       box-shadow: 1px 1px 11px rgba(0,0,0,.2);
       @include transition(.3);
-      @media (max-width: $breakpoint-lg) {
+      @media (max-width: $breakpoint-xl) {
         position: static;
         display: none;
         border-top: none;
+        background: $orangeColor;
+        box-shadow: none;
       }
       & .menu-item {
         width: 100%;
         margin: 0;
-        @media (max-width: $breakpoint-lg) {
+        @media (max-width: $breakpoint-xl) {
           box-shadow: unset;
           padding: 0;
         }
@@ -147,7 +171,7 @@
           width: 100%;
           padding: 10px 15px;
           @include transition(.3);
-          @media (max-width: $breakpoint-lg) {
+          @media (max-width: $breakpoint-xl) {
             padding: 10px 15px 10px 53px;
           }
           &:hover {
@@ -158,13 +182,13 @@
       }
     }
     &.show {
-      @media (max-width: $breakpoint-lg) {
+      @media (max-width: $breakpoint-xl) {
         padding-bottom: 0;
       }
       & .sub-menu {
         opacity: 1;
         visibility: visible;
-        @media (max-width: $breakpoint-lg) {
+        @media (max-width: $breakpoint-xl) {
           display: block;
         }
       }
@@ -184,12 +208,13 @@
   margin-left: auto;
   position: relative;
   // position: absolute;
-  @media (max-width: $breakpoint-lg) {
+  @media (max-width: $breakpoint-xl) {
     width: 50px;
     height: 37px;
     position: absolute;
     right: 10px;
     top: 4px;
+    background-image: url('../img/arrow-bottom-white.svg');
   }
 
 }
@@ -203,7 +228,7 @@
   z-index: 22;
   border: 1px solid #FFFFFF;
   border-radius: 5px;
-  @media (max-width: $breakpoint-lg) {
+  @media (max-width: $breakpoint-xl) {
     display: block;
   } 
   & span {
@@ -212,7 +237,7 @@
     display: block;
     left: calc(50% - 12.5px);
     width: 25px;
-    background: #D8D8D8;
+    background: $orangeColor;
     border-radius: 4px;
     height: 4px;
     @include transition(.3);
@@ -231,7 +256,7 @@
   }
   &.open {
     & span {
-      background: $whiteColor;
+      background: $orangeColor;
     }
     & span:nth-child(1) {
       top: calc(50% - 2.5px);

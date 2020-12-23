@@ -85,3 +85,33 @@ if ($(a).parents('.menu-item-has-child').length === 0) {
   $('.menu-item-has-child').removeClass('show'); //hide menu item
 }
 });
+
+gsap.from('.text-inner-hero', {y: 140,opacity: 0,duration: .8,delay: .2,stagger: 0.1, ease: Power4.easeOut})
+
+var $revealY = $('.text-inner');
+
+$($revealY).each(function(i) {
+  gsap.from($revealY[i], {
+    scrollTrigger: {
+      trigger: $revealY[i],
+    },
+    y: 140,
+    opacity: 0,
+    duration: .7,
+    ease: Power4.easeOut
+  })
+})
+
+var $revealOpacty = $('.reveal-opacity');
+
+$($revealOpacty).each(function(i) {
+  gsap.from($revealOpacty[i], {
+    scrollTrigger: {
+      trigger: $revealOpacty[i]
+    },
+    opacity: 0,
+    y: 50,
+    duration: 1.2,
+    ease: Power4.easeOut
+  })
+})

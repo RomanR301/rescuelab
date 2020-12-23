@@ -33,32 +33,59 @@
   @include fontSize(40, 104);
   line-height: 1.1;
   font-family: 'Maharlika', serif;
+  & .text-inner, & .text-inner-hero {
+    @include fontSize(40, 104);
+    line-height: 1.1;
+    font-family: 'Maharlika', serif;
+  }
 }
 
 .heading-2, .section-heading {
   @include fontSize(30, 72);
   line-height: 1.05;
   font-family: 'Maharlika', serif;
+  & .text-inner, & .text-inner-hero {
+    @include fontSize(30, 72);
+    line-height: 1.05;
+    font-family: 'Maharlika', serif;
+  }
 }
 
 .section-heading {
   margin-bottom: 48px;
   text-transform: uppercase;
+  @media (max-width: $breakpoint-lg) {
+    margin-bottom: 24px;
+  }
+  & .text-inner {
+    text-transform: uppercase;
+  }
 }
 
 .section-subheading {
   margin-bottom: 24px;
   text-transform: uppercase;
+  & .text-inner {
+    text-transform: uppercase;
+  }
 }
 
 .heading-3 {
   @include fontSize(22, 34);
   line-height: 1.2;
+  & .text-inner, & .text-inner-hero {
+    @include fontSize(20, 34);
+    line-height: 1.2;
+  }
 }
 
 .heading-4 {
   @include fontSize(20, 24);
   line-height: 1.2;
+  & .text-inner {
+    @include fontSize(20, 24);
+    line-height: 1.2;
+  }
 }
 
 
