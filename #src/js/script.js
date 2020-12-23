@@ -49,7 +49,7 @@ let front = {
       } else {
         $(document).on('click', '.scroll-to', function(){
           $('html, body').animate({
-              scrollTop: $( $(this).attr('href') ).offset().top - 130
+              scrollTop: $( $(this).attr('href') ).offset().top - 79
           }, 500);
           $('body').removeClass('active');
           $('.navbar').removeClass('active');
